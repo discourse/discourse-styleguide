@@ -1,0 +1,11 @@
+en:
+  js:
+    styleguide:
+      title: "Discourse Styleguide"
+      welcome: "To get started, choose a section from the menu on the left."
+
+      buttons:
+        title: "Buttons"
+      headings:
+        title: "Headings"
+        example: "Welcome to Discourse"

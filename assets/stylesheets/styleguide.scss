@@ -1,10 +1,45 @@
 .styleguide {
+  display: flex;
 
-  .styleguide-component {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  .styleguide-menu {
+    flex: 1 0 0;
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 1em;
+
+        a {
+          color: $primary;
+        }
+      }
+
+    }
+  }
+
+  .styleguide-contents {
+    flex: 4 0 0;
+  }
+
+  .styleguide-section {
+    .section-title {
+      text-transform: uppercase;
+    }
+
+    .description {
+      margin: 1em 0;
+    }
 
     .styleguide-example {
+
+      .example-title {
+        color: $primary-medium;
+        font-size: 0.8em;
+        border-bottom: 1px solid $primary-low;
+        margin-bottom: 0.8em;
+      }
+
       margin-top: 2em;
     }
   }

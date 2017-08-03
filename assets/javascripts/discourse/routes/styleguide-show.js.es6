@@ -7,16 +7,19 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, section) {
-    controller.set('section', section);
 
-    controller.set('options', [
-      {id: 1, name: 'Orange'},
-      {id: 2, name: 'Blue'},
-      {id: 3, name: 'Red'},
-      {id: 4, name: 'Yellow'},
-    ]);
+    const dummy = {
+      options: [
+        {id: 1, name: 'Orange'},
+        {id: 2, name: 'Blue'},
+        {id: 3, name: 'Red'},
+        {id: 4, name: 'Yellow'},
+      ],
+      categories: this.site.get('categories').slice(0, 5),
+      topic: Topic.create()
+    };
 
-    controller.set('topic', Topic.create());
+    controller.setProperties({ section, dummy });
   },
 
   renderTemplate(controller, section) {

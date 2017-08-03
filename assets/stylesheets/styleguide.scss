@@ -13,8 +13,11 @@
         a {
           color: $primary;
         }
-      }
 
+        a.active {
+          font-weight: bold;
+        }
+      }
     }
   }
 

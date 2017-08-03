@@ -11,3 +11,5 @@ en:
         example: "Welcome to Discourse"
       dropdowns:
         title: "Dropdowns"
+      categories:
+        title: "Categories"

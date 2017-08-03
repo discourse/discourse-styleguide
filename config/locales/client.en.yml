@@ -9,3 +9,5 @@ en:
       headings:
         title: "Headings"
         example: "Welcome to Discourse"
+      dropdowns:
+        title: "Dropdowns"

@@ -1,4 +1,10 @@
-<h2 class="section-title">{{headingTitle}}</h2>
+<h2 class="section-title">
+  {{#if section}}
+    {{section-title section}}
+  {{else}}
+    {{i18n title}}
+  {{/if}}
+</h2>
 
 <div class='styleguide-section-contents'>
   {{yield}}

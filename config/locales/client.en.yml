@@ -4,6 +4,9 @@ en:
       title: "Discourse Styleguide"
       welcome: "To get started, choose a section from the menu on the left."
 
+      atoms: Atoms
+      molecules: Molecules
+
       buttons:
         title: "Buttons"
       headings:
@@ -13,3 +16,5 @@ en:
         title: "Dropdowns"
       categories:
         title: "Categories"
+      bread_crumbs:
+        title: "Bread Crumbs"

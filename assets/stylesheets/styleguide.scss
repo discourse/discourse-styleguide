@@ -6,6 +6,12 @@
 
     ul {
       list-style: none;
+      margin-bottom: 2em;
+
+      li.styleguide-heading {
+        color: $primary-medium;
+        text-transform: uppercase;
+      }
 
       li {
         margin-bottom: 1em;
@@ -44,6 +50,11 @@
       }
 
       margin-top: 2em;
+    }
+
+    .rendered {
+      display: inline-block;
+      clear: both;
     }
   }
 }

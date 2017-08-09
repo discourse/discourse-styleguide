@@ -1,18 +1,14 @@
 <section class='styleguide'>
   <section class='styleguide-menu'>
-    <ul>
-      <li class="styleguide-heading">{{i18n "styleguide.atoms"}}</li>
-      <li>{{styleguide-link section="typography"}}</li>
-      <li>{{styleguide-link section="colors"}}</li>
-      <li>{{styleguide-link section="buttons"}}</li>
-      <li>{{styleguide-link section="dropdowns"}}</li>
-      <li>{{styleguide-link section="categories"}}</li>
-    </ul>
-
-    <ul>
-      <li class="styleguide-heading">{{i18n "styleguide.molecules"}}</li>
-      <li>{{styleguide-link section="bread-crumbs"}}</li>
-    </ul>
+    {{#each categories as |c|}}
+      {{log c}}
+      <ul>
+        <li class="styleguide-heading">{{i18n (concat "styleguide.categories." c.id)}}</li>
+        {{#each c.sections as |s|}}
+          <li>{{styleguide-link section=s}}</li>
+        {{/each}}
+      </ul>
+    {{/each}}
   </section>
   <section class='styleguide-contents'>
     {{outlet}}

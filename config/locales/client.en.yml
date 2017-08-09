@@ -4,19 +4,21 @@ en:
       title: "Discourse Styleguide"
       welcome: "To get started, choose a section from the menu on the left."
 
-      atoms: Atoms
-      molecules: Molecules
-
-      typography:
-        title: "Typography"
-        example: "Welcome to Discourse"
-      colors:
-        title: "Colors"
-      buttons:
-        title: "Buttons"
-      dropdowns:
-        title: "Dropdowns"
       categories:
-        title: "Categories"
-      bread_crumbs:
-        title: "Bread Crumbs"
+        atoms: Atoms
+        molecules: Molecules
+
+      sections:
+        typography:
+          title: "Typography"
+          example: "Welcome to Discourse"
+        colors:
+          title: "Colors"
+        buttons:
+          title: "Buttons"
+        dropdowns:
+          title: "Dropdowns"
+        categories:
+          title: "Categories"
+        bread_crumbs:
+          title: "Bread Crumbs"

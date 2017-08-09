@@ -1,13 +1,13 @@
 import Topic from 'discourse/models/topic';
+import { sectionById } from 'discourse/plugins/discourse-styleguide/discourse/lib/styleguide';
 
 export default Ember.Route.extend({
 
   model(params) {
-    return params.section;
+    return sectionById(params.section);
   },
 
   setupController(controller, section) {
-
     const dummy = {
       options: [
         {id: 1, name: 'Orange'},
@@ -24,7 +24,8 @@ export default Ember.Route.extend({
 
   renderTemplate(controller, section) {
     this.render('styleguide.show');
-    this.render(`styleguide/${section}`, {into: 'styleguide.show'});
+    controller.set('section', section);
+    this.render(`styleguide/${section.templateName}`, {into: 'styleguide.show'});
   }
 
 });

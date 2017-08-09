@@ -7,11 +7,13 @@ en:
       atoms: Atoms
       molecules: Molecules
 
+      typography:
+        title: "Typography"
+        example: "Welcome to Discourse"
+      colors:
+        title: "Colors"
       buttons:
         title: "Buttons"
-      headings:
-        title: "Headings"
-        example: "Welcome to Discourse"
       dropdowns:
         title: "Dropdowns"
       categories:

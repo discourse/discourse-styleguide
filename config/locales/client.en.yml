@@ -14,6 +14,9 @@ en:
           example: "Welcome to Discourse"
         colors:
           title: "Colors"
+        icons:
+          title: "Icons"
+          description: "See the full list of Font Awesome Icons"
         buttons:
           title: "Buttons"
         dropdowns:

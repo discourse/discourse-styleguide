@@ -1,6 +1,8 @@
 module ::DiscourseStyleguide
+  PLUGIN_NAME = "discourse-styleguide"
+
   class Engine < ::Rails::Engine
-    engine_name "discourse_styleguide"
+    engine_name DiscourseStyleguide::PLUGIN_NAME
     isolate_namespace DiscourseStyleguide
   end
 end

@@ -1,5 +1,5 @@
-import Topic from 'discourse/models/topic';
 import { sectionById } from 'discourse/plugins/discourse-styleguide/discourse/lib/styleguide';
+import { createData } from 'discourse/plugins/discourse-styleguide/discourse/lib/dummy-data';
 
 export default Ember.Route.extend({
 
@@ -8,23 +8,14 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, section) {
-    const dummy = {
-      options: [
-        {id: 1, name: 'Orange'},
-        {id: 2, name: 'Blue'},
-        {id: 3, name: 'Red'},
-        {id: 4, name: 'Yellow'},
-      ],
-      categories: this.site.get('categories').slice(0, 5),
-      topic: Topic.create()
-    };
-
-    controller.setProperties({ section, dummy });
+    controller.setProperties({
+      section,
+      dummy: createData(this.site)
+    });
   },
 
   renderTemplate(controller, section) {
     this.render('styleguide.show');
-    controller.set('section', section);
     this.render(`styleguide/${section.templateName}`, {into: 'styleguide.show'});
   }
 

@@ -56,16 +56,6 @@
       }
 
       margin-bottom: 2em;
-
-      button {
-        margin-right: 0.5em;
-        margin-bottom: 0.5em;
-      }
-
-      .d-icon {
-        margin-right: 0.5em;
-        margin-bottom: 0.5em;
-      }
     }
   }
 
@@ -94,3 +84,14 @@
   }
 }
 
+.buttons-examples {
+  button {
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.icons-examples .d-icon {
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}

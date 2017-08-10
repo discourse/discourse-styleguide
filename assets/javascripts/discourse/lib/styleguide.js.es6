@@ -1,6 +1,10 @@
 let _allCategories = null;
 let _sectionsById = {};
 
+export const CATEGORIES = [
+  'atoms', 'molecules', 'organisms'
+];
+
 export function sectionById(id) {
   // prime cache
   allCategories();
@@ -21,9 +25,12 @@ export function allCategories() {
 
   let categories = {};
 
+  let paths = CATEGORIES.join('|');
+
   // Find a list of sections based on what templates are available
   Object.keys(Ember.TEMPLATES).forEach(e => {
-    let matches = e.match(/styleguide\/(atoms|molecules)\/(\d+\-)?([^\/]+)$/);
+    let regexp = new RegExp(`styleguide\/(${paths})\/(\\d+)?\\-?([^\\/]+)$`);
+    let matches = e.match(regexp);
     if (matches) {
       let section = {
         id: matches[3],
@@ -40,12 +47,14 @@ export function allCategories() {
   });
 
   _allCategories = [];
-  Object.keys(categories).forEach(c => {
-    _allCategories.push({
-      id: c,
-      sections: categories[c].sort(sortSections)
-    });
+  CATEGORIES.forEach(c => {
+    let sections = categories[c];
+    if (sections) {
+      _allCategories.push({
+        id: c,
+        sections: sections.sort(sortSections)
+      });
+    }
   });
-
   return _allCategories;
 };

@@ -27,3 +27,5 @@ en:
           title: "Categories"
         bread_crumbs:
           title: "Bread Crumbs"
+        navigation_bar:
+          title: "Navigation Bar"

@@ -1,4 +1,5 @@
 import Topic from 'discourse/models/topic';
+import NavItem from 'discourse/models/nav-item';
 
 export function createData(site) {
   return {
@@ -19,7 +20,13 @@ export function createData(site) {
       { class: 'btn-hover', text: 'hover'},
       { class: 'btn-active', text: 'active'},
       { disabled: true, text: 'disabled'}
-    ]
+    ],
+
+    navItems: ['latest', 'categories', 'bookmarks', 'read', 'top'].map(name => {
+      let item = NavItem.fromText(name);
+      item.set('href', '#');
+      return item;
+    })
 
   };
 }

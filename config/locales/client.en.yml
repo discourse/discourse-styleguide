@@ -16,7 +16,7 @@ en:
           title: "Colors"
         icons:
           title: "Icons"
-          description: "See the full list of Font Awesome Icons"
+          full_list: "See the full list of Font Awesome Icons"
         buttons:
           title: "Buttons"
         dropdowns:

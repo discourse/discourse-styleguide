@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   setupController(controller, section) {
     controller.setProperties({
       section,
-      dummy: createData(this.site)
+      dummy: createData(this.store)
     });
   },
 

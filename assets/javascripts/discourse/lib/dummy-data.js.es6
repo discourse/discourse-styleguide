@@ -1,7 +1,6 @@
-import Topic from 'discourse/models/topic';
 import NavItem from 'discourse/models/nav-item';
 
-export function createData(site) {
+export function createData(store) {
   return {
     options: [
       {id: 1, name: 'Orange'},
@@ -9,8 +8,29 @@ export function createData(site) {
       {id: 3, name: 'Red'},
       {id: 4, name: 'Yellow'},
     ],
-    categories: site.get('categories').slice(0, 5),
-    topic: Topic.create(),
+
+    categories: [
+      {
+        id: 1234,
+        name: 'Fruit',
+        description_excerpt: "All about various kinds of fruit",
+        color: 'ff0'
+      },
+      {
+        id: 2345,
+        name: 'Vegetables',
+        description_excerpt: "Full of delicious vitamins",
+        color: 'f00'
+      },
+      {
+        id: 3456,
+        name: 'Beverages',
+        description_excerpt: "Thirsty?",
+        color: '99f'
+      },
+    ].map(c => store.createRecord('category', c)),
+
+    topic: store.createRecord('topic'),
 
     buttonSizes: [
       { class: 'btn-large', text: 'large'},

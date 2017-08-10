@@ -32,3 +32,5 @@ en:
           title: "Navigation Bar"
         navigation:
           title: "Navigation"
+        categories_list:
+          title: "Categories List"

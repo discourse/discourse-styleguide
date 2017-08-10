@@ -13,6 +13,7 @@ function sortSections(a, b) {
   if (result === 0) {
     return a.id < b.id ? -1 : 1;
   }
+  return result;
 }
 
 export function allCategories() {

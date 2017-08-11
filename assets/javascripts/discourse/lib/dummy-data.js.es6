@@ -42,7 +42,7 @@ export function createData(store) {
       { disabled: true, text: 'disabled'}
     ],
 
-    navItems: ['latest', 'categories', 'bookmarks', 'read', 'top'].map(name => {
+    navItems: ['latest', 'categories', 'top'].map(name => {
       let item = NavItem.fromText(name);
       item.set('href', '#');
       return item;

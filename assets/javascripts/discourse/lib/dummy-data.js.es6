@@ -1,20 +1,7 @@
 import NavItem from 'discourse/models/nav-item';
 
 let topicId = 0;
-
-function createTopic(store, attrs) {
-  return store.createRecord('topic', $.extend({
-    id: topicId++,
-    title: `Example Topic Title ${topicId}`,
-    fancyTitle: `Example Topic Title ${topicId}`,
-    slug: `example-topic-title-${topicId}`,
-    posts_count: ((topicId * 1234) % 100) + 1,
-    views: ((topicId * 123) % 1000) + 1,
-    like_count: topicId % 3,
-    created_at: `2017-03-${topicId}`,
-    invisible: false
-  }, attrs || {}));
-}
+let userId = 0;
 
 let _data;
 
@@ -45,19 +32,46 @@ export function createData(store) {
     },
   ].map(c => store.createRecord('category', c));
 
-  let topic = createTopic(store);
-  topic.set('category', categories[0]);
-  let invisibleTopic = createTopic(store, { invisible: true });
-  let closedTopic = createTopic(store, { closed: true });
-  closedTopic.set('category', categories[1]);
-  let archivedTopic = createTopic(store, { archived: true });
-  let pinnedTopic = createTopic(store, { pinned: true });
-  pinnedTopic.set('category', categories[2]);
-  let unpinnedTopic = createTopic(store, { unpinned: true });
-  let warningTopic = createTopic(store, { is_warning: true });
+  let createUser = () => {
+    userId++;
+    return store.createRecord('user', {
+      username: `user_${userId}`,
+      avatar_template: '/images/avatar.png'
+    });
+  };
 
-  console.log(topic.get('category_id'));
-  console.log(topic.get('category'));
+  let createTopic = (attrs) => {
+    topicId++;
+    return store.createRecord('topic', $.extend({
+      id: topicId,
+      title: `Example Topic Title ${topicId}`,
+      fancyTitle: `Example Topic Title ${topicId}`,
+      slug: `example-topic-title-${topicId}`,
+      posts_count: ((topicId * 1234) % 100) + 1,
+      views: ((topicId * 123) % 1000) + 1,
+      like_count: topicId % 3,
+      created_at: `2017-03-${topicId}`,
+      invisible: false,
+      posters: [
+        { extras: 'latest', user: createUser() },
+        { user: createUser() },
+        { user: createUser() },
+        { user: createUser() },
+        { user: createUser() }
+      ]
+    }, attrs || {}));
+  };
+
+  let topic = createTopic();
+  topic.set('category', categories[0]);
+  let invisibleTopic = createTopic({ invisible: true });
+  let closedTopic = createTopic({ closed: true });
+  closedTopic.set('category', categories[1]);
+  let archivedTopic = createTopic({ archived: true });
+  let pinnedTopic = createTopic({ pinned: true });
+  pinnedTopic.set('category', categories[2]);
+  let unpinnedTopic = createTopic({ unpinned: true });
+  let warningTopic = createTopic({ is_warning: true });
 
   _data = {
     options: [

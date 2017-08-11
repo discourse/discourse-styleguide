@@ -14,19 +14,22 @@ export function createData(store) {
         id: 1234,
         name: 'Fruit',
         description_excerpt: "All about various kinds of fruit",
-        color: 'ff0'
+        color: 'ff0',
+        slug: 'fruit'
       },
       {
         id: 2345,
         name: 'Vegetables',
         description_excerpt: "Full of delicious vitamins",
-        color: 'f00'
+        color: 'f00',
+        slug: 'vegetables'
       },
       {
         id: 3456,
         name: 'Beverages',
         description_excerpt: "Thirsty?",
-        color: '99f'
+        color: '99f',
+        slug: 'beverages'
       },
     ].map(c => store.createRecord('category', c)),
 

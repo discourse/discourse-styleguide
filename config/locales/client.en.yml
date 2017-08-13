@@ -42,3 +42,5 @@ en:
           title: "Topic Statuses"
         topic_list:
           title: "Topic List"
+        latest_topic_list:
+          title: "Latest Topic List"

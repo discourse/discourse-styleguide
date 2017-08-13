@@ -1,11 +1,11 @@
 {{#styleguide-example title="footer-message - default"}}
-  {{footer-message education="Education message" message="Footer message."}}
+  {{footer-message education=dummy.sentence message=dummy.short_sentence}}
 {{/styleguide-example}}
 
 {{#styleguide-example title="footer-message - latest"}}
   {{footer-message
-    education="Education Message"
-    message="Footer message."
+    education=dummy.sentence
+    message=dummy.short_sentence
     latest=true
     canCreateTopicOnCategory=true
     createTopic=(action "dummy")
@@ -14,8 +14,8 @@
 
 {{#styleguide-example title="footer-message - top"}}
   {{footer-message
-    education="Education Message"
-    message="Footer message."
+    education=dummy.sentence
+    message=dummy.short_sentence
     top=true
     changePeriod=(action "dummy")
   }}

@@ -115,7 +115,10 @@ export function createData(store) {
       pinnedTopic,
       unpinnedTopic,
       warningTopic
-    ]
+    ],
+
+    sentence: "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.",
+    short_sentence: "Lorem ipsum dolor sit amet."
   };
 
   return _data;

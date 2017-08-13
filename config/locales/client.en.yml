@@ -44,3 +44,5 @@ en:
           title: "Topic List"
         latest_topic_list:
           title: "Latest Topic List"
+        footer_message:
+          title: "Footer Message"

@@ -58,12 +58,15 @@ export function createData(store) {
         { user: createUser() },
         { user: createUser() },
         { user: createUser() }
-      ]
+      ],
     }, attrs || {}));
   };
 
   let topic = createTopic();
   topic.set('category', categories[0]);
+  topic.get('details').set('can_create_post', true);
+
+
   let invisibleTopic = createTopic({ invisible: true });
   let closedTopic = createTopic({ closed: true });
   closedTopic.set('category', categories[1]);
@@ -118,7 +121,8 @@ export function createData(store) {
     ],
 
     sentence: "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.",
-    short_sentence: "Lorem ipsum dolor sit amet."
+    short_sentence: "Lorem ipsum dolor sit amet.",
+    soon: new Date(new Date().getTime() + 100000)
   };
 
   return _data;

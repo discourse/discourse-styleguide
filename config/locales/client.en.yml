@@ -46,3 +46,11 @@ en:
           title: "Latest Topic List"
         footer_message:
           title: "Footer Message"
+        signup_cta:
+          title: "Signup CTA"
+        topic_timer_info:
+          title: "Topic Timers"
+        topic_footer_buttons:
+          title: "Topic Footer Buttons"
+        topic_notifications:
+          title: "Topic Notifications"

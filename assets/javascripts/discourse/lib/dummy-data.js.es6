@@ -91,6 +91,9 @@ export function createData(store) {
       { class: 'btn-medium', text: 'medium'},
       { text: 'small (default)'},
       { class: 'btn-xsmall', text: 'xsmall'},
+    ],
+
+    buttonStates: [
       { class: 'btn-hover', text: 'hover'},
       { class: 'btn-active', text: 'active'},
       { disabled: true, text: 'disabled'}

@@ -35,10 +35,13 @@ export function createData(store) {
   let createUser = () => {
     userId++;
     return store.createRecord('user', {
+      id: userId,
       username: `user_${userId}`,
       avatar_template: '/images/avatar.png'
     });
   };
+
+  let user = createUser();
 
   let createTopic = (attrs) => {
     topicId++;
@@ -53,7 +56,7 @@ export function createData(store) {
       created_at: `2017-03-${topicId}`,
       invisible: false,
       posters: [
-        { extras: 'latest', user: createUser() },
+        { extras: 'latest', user},
         { user: createUser() },
         { user: createUser() },
         { user: createUser() },
@@ -66,7 +69,6 @@ export function createData(store) {
   topic.set('category', categories[0]);
   topic.get('details').set('can_create_post', true);
 
-
   let invisibleTopic = createTopic({ invisible: true });
   let closedTopic = createTopic({ closed: true });
   closedTopic.set('category', categories[1]);
@@ -75,6 +77,29 @@ export function createData(store) {
   pinnedTopic.set('category', categories[2]);
   let unpinnedTopic = createTopic({ unpinned: true });
   let warningTopic = createTopic({ is_warning: true });
+
+  let sentence = "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.";
+
+  let cooked = `<p>Lorem ipsum dolor sit amet, et nec quis viderer prompta, ex omnium ponderum insolens eos, sed discere invenire principes in. Fuisset constituto per ad. Est no scripta propriae facilisis, viderer impedit deserunt in mel. Quot debet facilisis ne vix, nam in detracto tacimates. At quidam petentium vulputate pro. Alia iudico repudiandae ad vel, erat omnis epicuri eos id. Et illum dolor graeci vel, quo feugiat consulatu ei.</p>
+
+    <p>Case everti equidem ius ea, ubique veritus vim id. Eros omnium conclusionemque qui te, usu error alienum imperdiet ut, ex ius meis adipisci. Libris reprehendunt eos ex, mea at nisl suavitate. Altera virtute democritum pro cu, melius latine in ius.</p>`;
+
+  let transformedPost = {
+    id: 1234,
+    cooked,
+    created_at: moment().subtract(3, 'days'),
+    user_id: user.get('id'),
+    username: user.get('username'),
+    avatar_template: user.get('avatar_template'),
+    showLike: true,
+    canToggleLike: true,
+    canFlag: true,
+    canEdit: true,
+    canCreatePost: true,
+    canBookmark: true,
+    canManage: true,
+    canDelete: true,
+  };
 
   _data = {
     options: [
@@ -123,9 +148,12 @@ export function createData(store) {
       warningTopic
     ],
 
-    sentence: "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.",
+    sentence,
     short_sentence: "Lorem ipsum dolor sit amet.",
-    soon: new Date(new Date().getTime() + 100000)
+    soon: moment().add(2, 'days'),
+
+    transformedPost
+
   };
 
   return _data;

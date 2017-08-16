@@ -54,3 +54,5 @@ en:
           title: "Topic Footer Buttons"
         topic_notifications:
           title: "Topic Notifications"
+        post:
+          title: "Post"

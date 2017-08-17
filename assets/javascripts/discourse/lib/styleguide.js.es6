@@ -1,5 +1,6 @@
 let _allCategories = null;
 let _sectionsById = {};
+let _notes = {};
 
 export const CATEGORIES = [
   'atoms', 'molecules', 'organisms'
@@ -44,6 +45,13 @@ export function allCategories() {
       categories[section.category].push(section);
       _sectionsById[section.id] = section;
     }
+
+    // Look for notes
+    regexp = new RegExp(`styleguide\/notes\/(\\d+)?\\-?([^\\/]+)$`);
+    matches = e.match(regexp);
+    if (matches) {
+      _notes[matches[2]] = e.replace(/^.*styleguide\//, '');
+    }
   });
 
   _allCategories = [];
@@ -58,3 +66,7 @@ export function allCategories() {
   });
   return _allCategories;
 };
+
+export function findNote(section) {
+  return _notes[section.id];
+}

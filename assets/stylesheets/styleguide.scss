@@ -3,6 +3,12 @@
 .styleguide {
   display: flex;
 
+  .styleguide-note {
+    padding: 1em;
+    background-color: $tertiary;
+    margin-bottom: 1em;
+  }
+
   .styleguide-menu {
     flex: 1 0 0;
 

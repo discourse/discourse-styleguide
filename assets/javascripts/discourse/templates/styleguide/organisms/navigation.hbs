@@ -1,8 +1,12 @@
 {{#styleguide-example title="navigation"}}
-  {{#d-section bodyClass="navigation-categories" class="navigation-container"}}
-    {{bread-crumbs categories=dummy.categories}}
-    {{navigation-bar navItems=dummy.navItems filterMode="latest"}}
-    {{categories-admin-dropdown}}
-    {{create-topic-button canCreateTopic=true}}
-  {{/d-section}}
+  <div class='list-controls'>
+    <div class='container'>
+      {{#d-section bodyClass="navigation-categories" class="navigation-container"}}
+        {{bread-crumbs categories=dummy.categories}}
+        {{navigation-bar navItems=dummy.navItems filterMode="latest"}}
+        {{categories-admin-dropdown}}
+        {{create-topic-button canCreateTopic=true}}
+      {{/d-section}}
+    </div>
+  </div>
 {{/styleguide-example}}

@@ -28,7 +28,8 @@ export function createData(store) {
       name: 'Beverages',
       description_excerpt: "Thirsty?",
       color: '99f',
-      slug: 'beverages'
+      slug: 'beverages',
+      read_restricted: true
     },
   ].map(c => store.createRecord('category', c));
 

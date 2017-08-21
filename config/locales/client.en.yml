@@ -56,3 +56,5 @@ en:
           title: "Topic Notifications"
         post:
           title: "Post"
+        topic_map:
+          title: "Topic Map"

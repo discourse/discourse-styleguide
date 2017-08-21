@@ -100,6 +100,34 @@ export function createData(store) {
     canBookmark: true,
     canManage: true,
     canDelete: true,
+    createdByUsername: user.get('username'),
+    createdByAvatarTemplate: user.get('avatar_template'),
+    lastPostUsername: user.get('username'),
+    lastPostAvatarTemplate: user.get('avatar_template'),
+    topicReplyCount: 123,
+    topicViews: 3456,
+    participantCount: 10,
+    topicLikeCount: 14,
+    topicLinkLength: 5,
+    topicPostsCount: 4,
+    participants: [
+      createUser(),
+      createUser(),
+      createUser(),
+      createUser()
+    ],
+    topicLinks: [{
+      title: "Evil Trout",
+      url: "https://eviltrout.com",
+      domain: "eviltrout.com",
+      clicks: 1024,
+    },
+    {
+      title: "Cool Site",
+      url: "http://coolsite.example.com",
+      domain: "coolsite.example.com",
+      clicks: 512,
+    }]
   };
 
   _data = {

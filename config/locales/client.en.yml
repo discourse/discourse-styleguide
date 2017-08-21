@@ -58,3 +58,5 @@ en:
           title: "Post"
         topic_map:
           title: "Topic Map"
+        suggested_topics:
+          title: "Suggested Topics"

@@ -66,9 +66,22 @@ export function createData(store) {
     }, attrs || {}));
   };
 
+  const bunchOfTopics = [
+    topic,
+    invisibleTopic,
+    closedTopic,
+    archivedTopic,
+    pinnedTopic,
+    unpinnedTopic,
+    warningTopic
+  ];
+
   let topic = createTopic();
   topic.set('category', categories[0]);
-  topic.get('details').set('can_create_post', true);
+  topic.get('details').setProperties({
+    can_create_post: true,
+    suggested_topics: [ topic, topic, topic ]
+  });
 
   let invisibleTopic = createTopic({ invisible: true });
   let closedTopic = createTopic({ closed: true });
@@ -167,15 +180,7 @@ export function createData(store) {
     unpinnedTopic,
     warningTopic,
 
-    topics: [
-      topic,
-      invisibleTopic,
-      closedTopic,
-      archivedTopic,
-      pinnedTopic,
-      unpinnedTopic,
-      warningTopic
-    ],
+    topics: bunchOfTopics,
 
     sentence,
     short_sentence: "Lorem ipsum dolor sit amet.",

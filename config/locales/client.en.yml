@@ -28,10 +28,12 @@ en:
           title: "Categories"
         bread_crumbs:
           title: "Bread Crumbs"
-        navigation_bar:
-          title: "Navigation Bar"
         navigation:
           title: "Navigation"
+        navigation_bar:
+          title: "Navigation Bar"
+        navigation_stacked:
+          title: "Navigation Stacked"
         categories_list:
           title: "Categories List"
         topic_link:

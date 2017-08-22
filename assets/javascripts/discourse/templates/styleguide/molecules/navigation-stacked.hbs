@@ -1,0 +1,7 @@
+{{#styleguide-example title="navigation-stacked"}}
+  {{#mobile-nav class='preferences-nav' desktopClass='preferences-list action-list nav-stacked' currentPath=application.currentPath}}
+    {{#each dummy.navItems as |ni|}}
+      <li class='no-glyph nav-{{ni.name}}'><a href='#'>{{ni.name}}</a></li>
+    {{/each}}
+  {{/mobile-nav}}
+{{/styleguide-example}}

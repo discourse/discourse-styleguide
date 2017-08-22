@@ -4,7 +4,6 @@ export default Ember.Component.extend({
   didInsertElement() {
     let contents = this.$().html();
     cookAsync(contents).then(cooked => {
-      console.log(cooked);
       this.$().html(cooked.string);
     });
   }

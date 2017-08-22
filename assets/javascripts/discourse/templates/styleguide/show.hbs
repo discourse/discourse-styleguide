@@ -1,6 +1,8 @@
 {{#styleguide-section section=section}}
   {{#if note}}
-    {{styleguide-note note=note}}
+    <div class="styleguide-note">
+      {{partial (concat "styleguide/" note)}}
+    </div>
   {{/if}}
 
   {{outlet}}

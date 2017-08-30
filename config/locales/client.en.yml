@@ -62,3 +62,5 @@ en:
           title: "Topic Map"
         suggested_topics:
           title: "Suggested Topics"
+        post_menu:
+          title: "Post Menu"

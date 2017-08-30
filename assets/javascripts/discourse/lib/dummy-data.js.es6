@@ -187,7 +187,9 @@ export function createData(store) {
     short_sentence: "Lorem ipsum dolor sit amet.",
     soon: moment().add(2, 'days'),
 
-    transformedPost
+    transformedPost,
+
+    lorem: cooked
 
   };
 

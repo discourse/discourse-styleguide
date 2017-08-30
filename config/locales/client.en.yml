@@ -64,3 +64,7 @@ en:
           title: "Suggested Topics"
         post_menu:
           title: "Post Menu"
+        modal:
+          title: "Modal"
+          header: "Modal Title"
+          footer: "Modal Footer"

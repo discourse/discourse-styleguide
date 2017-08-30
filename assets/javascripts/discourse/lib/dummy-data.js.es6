@@ -66,16 +66,6 @@ export function createData(store) {
     }, attrs || {}));
   };
 
-  const bunchOfTopics = [
-    topic,
-    invisibleTopic,
-    closedTopic,
-    archivedTopic,
-    pinnedTopic,
-    unpinnedTopic,
-    warningTopic
-  ];
-
   let topic = createTopic();
   topic.set('category', categories[0]);
   topic.get('details').setProperties({
@@ -91,6 +81,17 @@ export function createData(store) {
   pinnedTopic.set('category', categories[2]);
   let unpinnedTopic = createTopic({ unpinned: true });
   let warningTopic = createTopic({ is_warning: true });
+
+  const bunchOfTopics = [
+    topic,
+    invisibleTopic,
+    closedTopic,
+    archivedTopic,
+    pinnedTopic,
+    unpinnedTopic,
+    warningTopic
+  ];
+
 
   let sentence = "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.";
 

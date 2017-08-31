@@ -189,6 +189,8 @@ export function createData(store) {
 
     transformedPost,
 
+    user,
+
     lorem: cooked
 
   };

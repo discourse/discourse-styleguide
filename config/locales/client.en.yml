@@ -68,3 +68,5 @@ en:
           title: "Modal"
           header: "Modal Title"
           footer: "Modal Footer"
+        user_about:
+          title: "User About Box"

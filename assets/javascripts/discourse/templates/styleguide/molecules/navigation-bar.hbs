@@ -1,3 +1,11 @@
 {{#styleguide-example title="navigation-bar"}}
   {{navigation-bar navItems=dummy.navItems filterMode="latest"}}
 {{/styleguide-example}}
+
+{{#styleguide-example title=".user-main .nav-pills"}}
+  {{#mobile-nav class='main-nav' desktopClass="nav nav-pills user-nav" currentPath=currentPath}}
+    {{#each dummy.navItems as |ni index|}}
+      <li><a href='{{ni.href}}' class='{{ni.filterMode}} {{index}}'>{{ni.displayName}}</a></li>
+    {{/each}}
+  {{/mobile-nav}}
+{{/styleguide-example}}

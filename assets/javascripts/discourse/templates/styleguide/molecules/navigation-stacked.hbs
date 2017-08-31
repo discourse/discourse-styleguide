@@ -1,7 +1,18 @@
-{{#styleguide-example title="navigation-stacked"}}
+{{#styleguide-example title=".nav-stacked"}}
   {{#mobile-nav class='preferences-nav' desktopClass='preferences-list action-list nav-stacked' currentPath=application.currentPath}}
     {{#each dummy.navItems as |ni|}}
-      <li class='no-glyph nav-{{ni.name}}'><a href='#'>{{ni.name}}</a></li>
+      <li><a href='{{ni.href}}'>{{ni.displayName}}</a></li>
     {{/each}}
   {{/mobile-nav}}
+{{/styleguide-example}}
+
+
+{{#styleguide-example title=".user-navigation .nav-stacked"}}
+    {{#d-section class="user-navigation"}}
+      {{#mobile-nav class='preferences-nav' desktopClass='preferences-list action-list nav-stacked' currentPath=application.currentPath}}
+        {{#each dummy.navItems as |ni|}}
+          <li><a href='{{ni.href}}'>{{ni.displayName}}</a></li>
+        {{/each}}
+      {{/mobile-nav}}
+  {{/d-section}}
 {{/styleguide-example}}

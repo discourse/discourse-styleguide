@@ -1,7 +1,7 @@
 {{#styleguide-example title="navigation"}}
   <div class='list-controls'>
     <div class='container'>
-      {{#d-section bodyClass="navigation-categories" class="navigation-container"}}
+      {{#d-section class="navigation-container"}}
         {{bread-crumbs categories=dummy.categories}}
         {{navigation-bar navItems=dummy.navItems filterMode="latest"}}
         {{categories-admin-dropdown}}
@@ -9,22 +9,4 @@
       {{/d-section}}
     </div>
   </div>
-{{/styleguide-example}}
-
-{{#styleguide-example title="user-main nav-pills"}}
-  {{#d-section class='user-main'}}
-    {{navigation-bar navItems=dummy.navItems filterMode="categories"}}
-  {{/d-section}}
-{{/styleguide-example}}
-
-{{#styleguide-example title="user-navigation nav-stacked"}}
-  {{#d-section class='user-main'}}
-    {{#d-section pageClass="user-preferences" class="user-navigation"}}
-      {{#mobile-nav class='preferences-nav' desktopClass='preferences-list action-list nav-stacked' currentPath=application.currentPath}}
-        {{#each dummy.navItems as |ni|}}
-          <li class='no-glyph nav-{{ni.name}}'><a href='#'>{{ni.name}}</a></li>
-        {{/each}}
-      {{/mobile-nav}}
-    {{/d-section}}
-  {{/d-section}}
 {{/styleguide-example}}

@@ -169,7 +169,13 @@ export function createData(store) {
 
     navItems: ['latest', 'categories', 'top'].map(name => {
       let item = NavItem.fromText(name);
+
       item.set('href', '#');
+
+      if (name === 'categories') {
+        item.set('styleGuideActive', true);
+      }
+
       return item;
     }),
 

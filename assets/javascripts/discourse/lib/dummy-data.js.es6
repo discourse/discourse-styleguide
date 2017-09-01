@@ -83,7 +83,8 @@ export function createData(store) {
     return store.createRecord('user', user_data);
   };
 
-  let user = createUser('/plugins/discourse-styleguide/images/bg-sample-1.jpg');
+  // This bg image is public domain: http://hubblesite.org/image/3999/gallery
+  let user = createUser('/plugins/discourse-styleguide/images/hubble-orion-nebula-bg.jpg');
 
   let createTopic = (attrs) => {
     topicId++;

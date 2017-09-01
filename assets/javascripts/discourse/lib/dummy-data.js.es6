@@ -33,16 +33,57 @@ export function createData(store) {
     },
   ].map(c => store.createRecord('category', c));
 
-  let createUser = () => {
+  let createUser = (profile_bg) => {
     userId++;
-    return store.createRecord('user', {
+
+    let user_data = {
       id: userId,
       username: `user_${userId}`,
-      avatar_template: '/images/avatar.png'
-    });
+      name: 'John Doe',
+      avatar_template: '/images/avatar.png',
+      website: 'discourse.com',
+      website_name: 'My Website is Discourse',
+      location: 'Toronto',
+      suspend_reason: 'Some reason',
+      displayGroups: [
+        {name: 'Group 1'},
+        {name: 'Group 2'}
+      ],
+      created_at: moment().subtract(10, 'days'),
+      last_posted_at: moment().subtract(3, 'days'),
+      last_seen_at: moment().subtract(1, 'days'),
+      profile_view_count: 378,
+      invited_by: {
+        username: 'user_2'
+      },
+      trustLevel: {name: 'Dummy'},
+      publicUserFields: [
+        {
+          field: {
+            dasherized_name: 'puf_1',
+            name: 'Public User Field 1'
+          },
+          value: 'Some value 1'
+        },
+        {
+          field: {
+            dasherized_name: 'puf_2',
+            name: 'Public User Field 2'
+          },
+          value: 'Some value 2'
+        }
+      ]
+    };
+
+    if (profile_bg) {
+      user_data.profile_background = profile_bg;
+      user_data.has_profile_background = true;
+    }
+
+    return store.createRecord('user', user_data);
   };
 
-  let user = createUser();
+  let user = createUser('/plugins/discourse-styleguide/images/bg-sample-1.jpg');
 
   let createTopic = (attrs) => {
     topicId++;
@@ -91,7 +132,6 @@ export function createData(store) {
     unpinnedTopic,
     warningTopic
   ];
-
 
   let sentence = "Donec viverra lacus id sapien aliquam, tempus tincidunt urna porttitor.";
 

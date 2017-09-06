@@ -1,7 +1,7 @@
 import NavItem from 'discourse/models/nav-item';
 
-let topicId = 0;
-let userId = 0;
+let topicId = 2000000;
+let userId = 1000000;
 
 let _data;
 

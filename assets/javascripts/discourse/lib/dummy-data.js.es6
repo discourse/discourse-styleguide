@@ -33,10 +33,10 @@ export function createData(store) {
     },
   ].map(c => store.createRecord('category', c));
 
-  let createUser = (profile_bg) => {
+  let createUser = attrs => {
     userId++;
 
-    let user_data = {
+    let userData = {
       id: userId,
       username: `user_${userId}`,
       name: 'John Doe',
@@ -75,16 +75,16 @@ export function createData(store) {
       ]
     };
 
-    if (profile_bg) {
-      user_data.profile_background = profile_bg;
-      user_data.has_profile_background = true;
-    }
+    Object.assign(userData, attrs || {});
 
-    return store.createRecord('user', user_data);
+    return store.createRecord('user', userData);
   };
 
   // This bg image is public domain: http://hubblesite.org/image/3999/gallery
-  let user = createUser('/plugins/discourse-styleguide/images/hubble-orion-nebula-bg.jpg');
+  let user = createUser({
+    profile_background: '/plugins/discourse-styleguide/images/hubble-orion-nebula-bg.jpg',
+    has_profile_background: true,
+  });
 
   let createTopic = (attrs) => {
     topicId++;
@@ -237,6 +237,11 @@ export function createData(store) {
     transformedPost,
 
     user,
+
+    userWithUnread: createUser({
+      unread_notifications: 3,
+      unread_private_messages: 7
+    }),
 
     lorem: cooked
 

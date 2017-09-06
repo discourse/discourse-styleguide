@@ -70,3 +70,5 @@ en:
           footer: "Modal Footer"
         user_about:
           title: "User About Box"
+        header_icons:
+          title: "Header Icons"

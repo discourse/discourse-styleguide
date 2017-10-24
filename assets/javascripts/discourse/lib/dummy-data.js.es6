@@ -120,6 +120,8 @@ export function createData(store) {
   closedTopic.set('category', categories[1]);
   let archivedTopic = createTopic({ archived: true });
   let pinnedTopic = createTopic({ pinned: true });
+  pinnedTopic.set("clearPin", () => pinnedTopic.set("pinned", false) );
+  pinnedTopic.set("rePin", () => pinnedTopic.set("pinned", true) );
   pinnedTopic.set('category', categories[2]);
   let unpinnedTopic = createTopic({ unpinned: true });
   let warningTopic = createTopic({ is_warning: true });
@@ -243,8 +245,11 @@ export function createData(store) {
       unread_private_messages: 7
     }),
 
-    lorem: cooked
+    lorem: cooked,
 
+    topicTimerUpdateDate: "2017-10-18 18:00",
+
+    categoryNames: categories.map((c) => c.name)
   };
 
   return _data;

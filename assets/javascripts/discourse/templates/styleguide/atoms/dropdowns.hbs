@@ -2,20 +2,40 @@
   {{combo-box content=dummy.options}}
 {{/styleguide-example}}
 
+{{#styleguide-example title="filterable combo-box"}}
+  {{combo-box content=dummy.categoryNames filterable=true}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="combo-box with a default state"}}
+  {{combo-box content=dummy.options none="category.none"}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="combo-box clearable"}}
+  {{combo-box content=dummy.options none="category.none" clearable=true}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="topic-notifications-options"}}
+  {{topic-notifications-options topic=dummy.topic}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="topic-notifications-button"}}
+  {{topic-notifications-button topic=dummy.topic}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="topic-footer-mobile-dropdown"}}
+  {{topic-footer-mobile-dropdown topic=dummy.topic}}
+{{/styleguide-example}}
+
 {{#styleguide-example title="category-chooser"}}
   {{category-chooser}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="topic-footer-mobile-dropdown"}}
-  {{topic-footer-mobile-dropdown topic=dummy.topic class="medium"}}
+{{#styleguide-example title="pinned-button"}}
+  {{pinned-button topic=dummy.pinnedTopic}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="category-select-box medium"}}
-  {{category-select-box class="medium"}}
-{{/styleguide-example}}
-
-{{#styleguide-example title="category-select-box small"}}
-  {{category-select-box class="small"}}
+{{#styleguide-example title="pinned-options"}}
+  {{pinned-options topic=dummy.pinnedTopic}}
 {{/styleguide-example}}
 
 {{#styleguide-example title="categories-admin-dropdown"}}
@@ -27,9 +47,19 @@
 {{/styleguide-example}}
 
 {{#styleguide-example title="notifications-button"}}
-  {{notifications-button i18nPrefix='groups.notifications' value=1}}
+  {{notifications-button i18nPrefix="groups.notifications" value=1}}
 {{/styleguide-example}}
 
 {{#styleguide-example title="dropdown-select-box"}}
-  {{dropdown-select-box content=dummy.options textKey="name"}}
+  {{dropdown-select-box content=dummy.options}}
+{{/styleguide-example}}
+
+{{#styleguide-example title="future-date-input-selector"}}
+  {{future-date-input-selector
+      minimumResultsForSearch=-1
+      statusType="open"
+      input=dummy.topicTimerUpdateDate
+      includeWeekend=true
+      includeForever=true
+      none="topic.auto_update_input.none"}}
 {{/styleguide-example}}

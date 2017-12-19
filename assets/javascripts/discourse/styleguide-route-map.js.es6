@@ -1,7 +1,7 @@
 export default function() {
-  const site = this.site;
+  const { disabled_plugins = [] } = this.site;
 
-  if (site && site.disabled_plugins.indexOf('discourse-styleguide') !== -1) {
+  if (disabled_plugins.indexOf('discourse-styleguide') !== -1) {
     return;
   }
 

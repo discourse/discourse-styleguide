@@ -120,8 +120,8 @@ export function createData(store) {
   closedTopic.set('category', categories[1]);
   let archivedTopic = createTopic({ archived: true });
   let pinnedTopic = createTopic({ pinned: true });
-  pinnedTopic.set("clearPin", () => pinnedTopic.set("pinned", false) );
-  pinnedTopic.set("rePin", () => pinnedTopic.set("pinned", true) );
+  pinnedTopic.set("clearPin", () => pinnedTopic.set("pinned", "unpinned") );
+  pinnedTopic.set("rePin", () => pinnedTopic.set("pinned", "pinned") );
   pinnedTopic.set('category', categories[2]);
   let unpinnedTopic = createTopic({ unpinned: true });
   let warningTopic = createTopic({ is_warning: true });

@@ -1,8 +1,10 @@
-import { sectionById, findNote } from 'discourse/plugins/discourse-styleguide/discourse/lib/styleguide';
-import { createData } from 'discourse/plugins/discourse-styleguide/discourse/lib/dummy-data';
+import {
+  sectionById,
+  findNote
+} from "discourse/plugins/discourse-styleguide/discourse/lib/styleguide";
+import { createData } from "discourse/plugins/discourse-styleguide/discourse/lib/dummy-data";
 
 export default Ember.Route.extend({
-
   model(params) {
     return sectionById(params.section);
   },
@@ -18,9 +20,9 @@ export default Ember.Route.extend({
   },
 
   renderTemplate(controller, section) {
-
-    this.render('styleguide.show');
-    this.render(`styleguide/${section.templateName}`, { into: 'styleguide.show' });
+    this.render("styleguide.show");
+    this.render(`styleguide/${section.templateName}`, {
+      into: "styleguide.show"
+    });
   }
-
 });

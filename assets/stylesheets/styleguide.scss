@@ -1,4 +1,5 @@
 @import "colors";
+@import "typography";
 
 .styleguide {
   display: flex;
@@ -44,9 +45,13 @@
 
   .styleguide-section {
     .section-title {
-      font-size: 20px;
-      text-transform: uppercase;
+      font-size: $font-up-6;
+      font-weight: normal;
       margin-bottom: 1em;
+    }
+
+    .section-description {
+      margin-bottom: 2em;
     }
 
     .description {
@@ -80,7 +85,7 @@
       display: flex;
       flex-direction: column;
       height: 120px;
-      margin-right: 0.5em;
+      margin: 0.5em 0.5em 0.5em 0;
 
       .color-bg {
         flex: 4;
@@ -95,6 +100,18 @@
       }
     }
   }
+
+  pre {
+    background: $primary-very-low;
+    span {
+      color: $primary-medium;
+    }
+  }
+
+  p.reason {
+    color: $primary-medium;
+    margin: 0 0 0 10px;
+  }
 }
 
 .buttons-examples {
@@ -104,7 +121,8 @@
   }
 }
 
-.icons-examples, .topic-statuses-examples .d-icon {
+.icons-examples,
+.topic-statuses-examples .d-icon {
   margin-right: 0.5em;
   margin-bottom: 0.5em;
 }

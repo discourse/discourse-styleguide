@@ -1,4 +1,4 @@
 export default Ember.Component.extend({
-  tagName: 'section',
-  classNameBindings: [':color-example']
+  tagName: "section",
+  classNameBindings: [":color-example"]
 });

@@ -1,4 +1,4 @@
-import { cookAsync } from 'discourse/lib/text';
+import { cookAsync } from "discourse/lib/text";
 
 export default Ember.Component.extend({
   didInsertElement() {

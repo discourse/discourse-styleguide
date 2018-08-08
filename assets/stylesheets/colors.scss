@@ -1,9 +1,18 @@
 .color-row {
+  .primary-very-low {
+    background-color: $primary-very-low;
+  }
   .primary-low {
     background-color: $primary-low;
   }
+  .primary-low-mid {
+    background-color: $primary-low-mid;
+  }
   .primary-medium {
     background-color: $primary-medium;
+  }
+  .primary-high {
+    background-color: $primary-high;
   }
   .primary {
     background-color: $primary;
@@ -14,11 +23,20 @@
   .secondary-medium {
     background-color: $secondary-medium;
   }
+  .secondary-high {
+    background-color: $secondary-high;
+  }
   .secondary {
     background-color: $secondary;
   }
   .tertiary-low {
     background-color: $tertiary-low;
+  }
+  .tertiary-medium {
+    background-color: $tertiary-medium;
+  }
+  .tertiary-high {
+    background-color: $tertiary-high;
   }
   .tertiary {
     background-color: $tertiary;
@@ -35,6 +53,9 @@
   .highlight-medium {
     background-color: $highlight-medium;
   }
+  .highlight-high {
+    background-color: $highlight-high;
+  }
   .highlight {
     background-color: $highlight;
   }
@@ -49,6 +70,9 @@
   }
   .success-low {
     background-color: $success-low;
+  }
+  .success-medium {
+    background-color: $success-medium;
   }
   .success {
     background-color: $success;

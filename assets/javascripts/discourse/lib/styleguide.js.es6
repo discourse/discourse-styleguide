@@ -2,9 +2,7 @@ let _allCategories = null;
 let _sectionsById = {};
 let _notes = {};
 
-export const CATEGORIES = [
-  'atoms', 'molecules', 'organisms'
-];
+export const CATEGORIES = ["atoms", "molecules", "organisms"];
 
 export function sectionById(id) {
   // prime cache
@@ -22,11 +20,13 @@ function sortSections(a, b) {
 }
 
 export function allCategories() {
-  if (_allCategories) { return _allCategories; }
+  if (_allCategories) {
+    return _allCategories;
+  }
 
   let categories = {};
 
-  let paths = CATEGORIES.join('|');
+  let paths = CATEGORIES.join("|");
 
   // Find a list of sections based on what templates are available
   Object.keys(Ember.TEMPLATES).forEach(e => {
@@ -35,9 +35,9 @@ export function allCategories() {
     if (matches) {
       let section = {
         id: matches[3],
-        priority: parseInt(matches[2] || '100'),
+        priority: parseInt(matches[2] || "100"),
         category: matches[1],
-        templateName: e.replace(/^.*styleguide\//, '')
+        templateName: e.replace(/^.*styleguide\//, "")
       };
       if (!categories[section.category]) {
         categories[section.category] = [];
@@ -50,7 +50,7 @@ export function allCategories() {
     regexp = new RegExp(`styleguide\/notes\/(\\d+)?\\-?([^\\/]+)$`);
     matches = e.match(regexp);
     if (matches) {
-      _notes[matches[2]] = e.replace(/^.*styleguide\//, '');
+      _notes[matches[2]] = e.replace(/^.*styleguide\//, "");
     }
   });
 
@@ -65,7 +65,7 @@ export function allCategories() {
     }
   });
   return _allCategories;
-};
+}
 
 export function findNote(section) {
   return _notes[section.id];

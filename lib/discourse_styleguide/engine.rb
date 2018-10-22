@@ -6,4 +6,3 @@ module ::DiscourseStyleguide
     isolate_namespace DiscourseStyleguide
   end
 end
-

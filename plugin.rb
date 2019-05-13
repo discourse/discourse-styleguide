@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # name: discourse-styleguide
 # about: Preview how Widgets are Styled in Discourse
 # version: 0.1

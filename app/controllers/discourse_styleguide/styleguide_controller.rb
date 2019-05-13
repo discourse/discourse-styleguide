@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DiscourseStyleguide
   class StyleguideController < ApplicationController
     requires_plugin DiscourseStyleguide::PLUGIN_NAME

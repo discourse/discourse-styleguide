@@ -1,40 +1,40 @@
-{{#styleguide-example title="icon - sizes"}}
+{{#styleguide-example title=".btn-icon - sizes"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{d-button icon="times" translatedTitle=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="icons - states"}}
+{{#styleguide-example title=".btn-icon - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{d-button icon="times" translatedTitle=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="text - sizes"}}
+{{#styleguide-example title=".btn-text - sizes"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{d-button translatedLabel=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="text - states"}}
+{{#styleguide-example title=".btn-text - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{d-button translatedLabel=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="icon + text - sizes"}}
+{{#styleguide-example title=".btn-default .btn-icon-text - sizes"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{d-button icon="plus" translatedLabel=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="icon + text - states"}}
+{{#styleguide-example title=".btn-default .btn-icon-text - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{d-button icon="plus" translatedLabel=bs.text class=bs.class disabled=bs.disabled}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title=".btn-primary icon + text"}}
+{{#styleguide-example title=".btn-primary .btn-icon-text"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{d-button
       class=(concat "btn-primary " bs.class)
@@ -45,7 +45,7 @@
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title=".btn-primary icon + text - states"}}
+{{#styleguide-example title=".btn-primary .btn-icon-text - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{d-button
       class=(concat "btn-primary " bs.class)
@@ -57,7 +57,7 @@
 {{/styleguide-example}}
 
 
-{{#styleguide-example title=".btn-danger icon + text - sizes"}}
+{{#styleguide-example title=".btn-danger .btn-icon-text - sizes"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{d-button
       class=(concat "btn-danger " bs.class)
@@ -68,7 +68,7 @@
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title=".btn-danger icon + text - states"}}
+{{#styleguide-example title=".btn-danger .btn-icon-text - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{d-button
       class=(concat "btn-danger " bs.class)
@@ -79,13 +79,13 @@
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="flat-button - sizes"}}
+{{#styleguide-example title=".btn-flat - sizes"}}
   {{#each dummy.buttonSizes as |bs|}}
     {{flat-button icon="trash" disabled=bs.disabled transaltedTitle=bs.title}}
   {{/each}}
 {{/styleguide-example}}
 
-{{#styleguide-example title="flat-button - states"}}
+{{#styleguide-example title=".btn-flat - states"}}
   {{#each dummy.buttonStates as |bs|}}
     {{flat-button icon="trash" disabled=bs.disabled transaltedTitle=bs.title}}
   {{/each}}

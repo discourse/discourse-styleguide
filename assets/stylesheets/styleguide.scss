@@ -103,8 +103,12 @@
 
   pre {
     background: $primary-very-low;
+    white-space: pre-wrap;
     span {
       color: $primary-medium;
+      &.hljs-attribute {
+        color: teal;
+      }
     }
   }
 

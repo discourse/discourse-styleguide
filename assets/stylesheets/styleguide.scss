@@ -104,6 +104,11 @@
   pre {
     background: $primary-very-low;
     white-space: pre-wrap;
+    &.pre-inline {
+      display: inline-block;
+      margin: 0;
+      vertical-align: bottom;
+    }
     span {
       color: $primary-medium;
       &.hljs-attribute {

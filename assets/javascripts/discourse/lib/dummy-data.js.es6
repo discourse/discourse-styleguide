@@ -159,7 +159,7 @@ export function createData(store) {
     showLike: true,
     canToggleLike: true,
     canFlag: true,
-    canEdit: true,
+    canEdit: false,
     canCreatePost: true,
     canBookmark: true,
     canManage: true,

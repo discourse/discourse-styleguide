@@ -118,6 +118,7 @@
   }
 
   p.reason {
+    display: inline;
     color: $primary-medium;
     margin: 0 0 0 10px;
   }
@@ -134,4 +135,10 @@
 .topic-statuses-examples .d-icon {
   margin-right: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.dropdowns-examples {
+  .select-kit.is-hidden {
+    display: inline-block;
+  }
 }

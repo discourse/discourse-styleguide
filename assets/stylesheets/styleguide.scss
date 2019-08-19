@@ -142,3 +142,25 @@
     display: inline-block;
   }
 }
+
+.styleguide-icons {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px 150px;
+  grid-gap: 10px;
+
+  .styleguide-icon {
+    background-color: $primary-low;
+    margin: 3px;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    svg {
+      display: block;
+      font-size: 3em;
+      margin: 5px auto;
+    }
+    span {
+      font-size: $font-down-1;
+    }
+  }
+}

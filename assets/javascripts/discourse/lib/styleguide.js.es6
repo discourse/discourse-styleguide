@@ -35,7 +35,7 @@ export function allCategories() {
     if (matches) {
       let section = {
         id: matches[3],
-        priority: parseInt(matches[2] || "100"),
+        priority: parseInt(matches[2] || "100", 10),
         category: matches[1],
         templateName: e.replace(/^.*styleguide\//, "")
       };

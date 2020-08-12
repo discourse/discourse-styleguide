@@ -6,7 +6,7 @@
 
   .styleguide-note {
     padding: 1em;
-    background-color: $tertiary;
+    background-color: var(--tertiary, $tertiary);
     margin-bottom: 1em;
   }
 
@@ -18,7 +18,7 @@
       margin-bottom: 2em;
 
       li.styleguide-heading {
-        color: $primary-medium;
+        color: var(--primary-medium, $primary-medium);
         text-transform: uppercase;
         font-size: 14px;
       }
@@ -27,7 +27,7 @@
         margin-bottom: 0.25em;
 
         a {
-          color: $primary;
+          color: var(--primary, $primary);
           font-size: 14px;
         }
 
@@ -64,9 +64,9 @@
 
     .styleguide-example {
       .example-title {
-        color: $primary-medium;
+        color: var(--primary-medium, $primary-medium);
         font-size: 0.8em;
-        border-bottom: 1px solid $primary-low;
+        border-bottom: 1px solid var(--primary-low, $primary-low);
         margin-bottom: 0.8em;
       }
 
@@ -102,7 +102,7 @@
   }
 
   pre {
-    background: $primary-very-low;
+    background: var(--primary-very-low, $primary-very-low);
     white-space: pre-wrap;
     &.pre-inline {
       display: inline-block;
@@ -110,7 +110,7 @@
       vertical-align: bottom;
     }
     span {
-      color: $primary-medium;
+      color: var(--primary-medium, $primary-medium);
       &.hljs-attribute {
         color: teal;
       }
@@ -119,7 +119,7 @@
 
   p.reason {
     display: inline;
-    color: $primary-medium;
+    color: var(--primary-medium, $primary-medium);
     margin: 0 0 0 10px;
   }
 }
@@ -149,7 +149,7 @@
   grid-gap: 10px;
 
   .styleguide-icon {
-    background-color: $primary-low;
+    background-color: var(--primary-low, $primary-low);
     margin: 3px;
     text-align: center;
     padding: 10px;

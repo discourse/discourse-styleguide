@@ -1,6 +1,6 @@
 import {
   sectionById,
-  findNote
+  findNote,
 } from "discourse/plugins/discourse-styleguide/discourse/lib/styleguide";
 import { createData } from "discourse/plugins/discourse-styleguide/discourse/lib/dummy-data";
 
@@ -15,14 +15,14 @@ export default Ember.Route.extend({
     controller.setProperties({
       section,
       note,
-      dummy: createData(this.store)
+      dummy: createData(this.store),
     });
   },
 
   renderTemplate(controller, section) {
     this.render("styleguide.show");
     this.render(`styleguide/${section.templateName}`, {
-      into: "styleguide.show"
+      into: "styleguide.show",
     });
-  }
+  },
 });

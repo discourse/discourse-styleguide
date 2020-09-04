@@ -14,5 +14,5 @@ export default Ember.Component.extend({
     if (section) {
       return `${section.id}-examples`;
     }
-  }
+  },
 });

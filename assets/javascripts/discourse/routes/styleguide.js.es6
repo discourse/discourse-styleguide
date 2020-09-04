@@ -7,5 +7,5 @@ export default Ember.Route.extend({
 
   setupController(controller, categories) {
     controller.set("categories", categories);
-  }
+  },
 });

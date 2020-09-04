@@ -7,12 +7,12 @@ export default Ember.Component.extend({
 
     Ember.run.later(() => {
       var IDs = $("#svg-sprites symbol")
-        .map(function() {
+        .map(function () {
           return this.id;
         })
         .get();
 
       this.set("iconIDs", IDs);
     }, 2000);
-  }
+  },
 });

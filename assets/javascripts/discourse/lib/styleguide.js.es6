@@ -29,7 +29,7 @@ export function allCategories() {
   let paths = CATEGORIES.join("|");
 
   // Find a list of sections based on what templates are available
-  Object.keys(Ember.TEMPLATES).forEach(e => {
+  Object.keys(Ember.TEMPLATES).forEach((e) => {
     let regexp = new RegExp(`styleguide\/(${paths})\/(\\d+)?\\-?([^\\/]+)$`);
     let matches = e.match(regexp);
     if (matches) {
@@ -37,7 +37,7 @@ export function allCategories() {
         id: matches[3],
         priority: parseInt(matches[2] || "100", 10),
         category: matches[1],
-        templateName: e.replace(/^.*styleguide\//, "")
+        templateName: e.replace(/^.*styleguide\//, ""),
       };
       if (!categories[section.category]) {
         categories[section.category] = [];
@@ -55,12 +55,12 @@ export function allCategories() {
   });
 
   _allCategories = [];
-  CATEGORIES.forEach(c => {
+  CATEGORIES.forEach((c) => {
     let sections = categories[c];
     if (sections) {
       _allCategories.push({
         id: c,
-        sections: sections.sort(sortSections)
+        sections: sections.sort(sortSections),
       });
     }
   });

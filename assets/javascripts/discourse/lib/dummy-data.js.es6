@@ -16,14 +16,14 @@ export function createData(store) {
       name: "Fruit",
       description_excerpt: "All about various kinds of fruit",
       color: "ff0",
-      slug: "fruit"
+      slug: "fruit",
     },
     {
       id: 2345,
       name: "Vegetables",
       description_excerpt: "Full of delicious vitamins",
       color: "f00",
-      slug: "vegetables"
+      slug: "vegetables",
     },
     {
       id: 3456,
@@ -31,11 +31,11 @@ export function createData(store) {
       description_excerpt: "Thirsty?",
       color: "99f",
       slug: "beverages",
-      read_restricted: true
-    }
-  ].map(c => store.createRecord("category", c));
+      read_restricted: true,
+    },
+  ].map((c) => store.createRecord("category", c));
 
-  let createUser = attrs => {
+  let createUser = (attrs) => {
     userId++;
 
     let userData = {
@@ -53,25 +53,25 @@ export function createData(store) {
       last_seen_at: moment().subtract(1, "days"),
       profile_view_count: 378,
       invited_by: {
-        username: "user_2"
+        username: "user_2",
       },
       trustLevel: { name: "Dummy" },
       publicUserFields: [
         {
           field: {
             dasherized_name: "puf_1",
-            name: "Public User Field 1"
+            name: "Public User Field 1",
           },
-          value: "Some value 1"
+          value: "Some value 1",
         },
         {
           field: {
             dasherized_name: "puf_2",
-            name: "Public User Field 2"
+            name: "Public User Field 2",
           },
-          value: "Some value 2"
-        }
-      ]
+          value: "Some value 2",
+        },
+      ],
     };
 
     Object.assign(userData, attrs || {});
@@ -83,10 +83,10 @@ export function createData(store) {
   let user = createUser({
     profile_background:
       "/plugins/discourse-styleguide/images/hubble-orion-nebula-bg.jpg",
-    has_profile_background: true
+    has_profile_background: true,
   });
 
-  let createTopic = attrs => {
+  let createTopic = (attrs) => {
     topicId++;
     return store.createRecord(
       "topic",
@@ -106,8 +106,8 @@ export function createData(store) {
             { user: createUser() },
             { user: createUser() },
             { user: createUser() },
-            { user: createUser() }
-          ]
+            { user: createUser() },
+          ],
         },
         attrs || {}
       )
@@ -118,7 +118,7 @@ export function createData(store) {
   topic.set("category", categories[0]);
   topic.get("details").setProperties({
     can_create_post: true,
-    suggested_topics: [topic, topic, topic]
+    suggested_topics: [topic, topic, topic],
   });
 
   let invisibleTopic = createTopic({ invisible: true });
@@ -139,7 +139,7 @@ export function createData(store) {
     archivedTopic,
     pinnedTopic,
     unpinnedTopic,
-    warningTopic
+    warningTopic,
   ];
 
   let sentence =
@@ -180,15 +180,15 @@ export function createData(store) {
         title: "Evil Trout",
         url: "https://eviltrout.com",
         domain: "eviltrout.com",
-        clicks: 1024
+        clicks: 1024,
       },
       {
         title: "Cool Site",
         url: "http://coolsite.example.com",
         domain: "coolsite.example.com",
-        clicks: 512
-      }
-    ]
+        clicks: 512,
+      },
+    ],
   };
 
   _data = {
@@ -196,23 +196,23 @@ export function createData(store) {
       { id: 1, name: "Orange" },
       { id: 2, name: "Blue" },
       { id: 3, name: "Red" },
-      { id: 4, name: "Yellow" }
+      { id: 4, name: "Yellow" },
     ],
 
     categories,
 
     buttonSizes: [
       { class: "btn-large", text: "large" },
-      { class: "btn-default", text: "default" }
+      { class: "btn-default", text: "default" },
     ],
 
     buttonStates: [
       { class: "btn-hover", text: "hover" },
       { class: "btn-active", text: "active" },
-      { disabled: true, text: "disabled" }
+      { disabled: true, text: "disabled" },
     ],
 
-    navItems: ["latest", "categories", "top"].map(name => {
+    navItems: ["latest", "categories", "top"].map((name) => {
       let item = NavItem.fromText(name);
 
       item.set("href", "#");
@@ -244,26 +244,26 @@ export function createData(store) {
 
     userWithUnread: createUser({
       unread_notifications: 3,
-      unread_private_messages: 7
+      unread_private_messages: 7,
     }),
 
     lorem: cooked,
 
     topicTimerUpdateDate: "2017-10-18 18:00",
 
-    categoryNames: categories.map(c => c.name),
+    categoryNames: categories.map((c) => c.name),
 
     groups: [
       { name: "staff", id: 1, automatic: false },
       { name: "lounge", id: 2, automatic: true },
-      { name: "admin", id: 3, automatic: false }
+      { name: "admin", id: 3, automatic: false },
     ],
 
     selectedGroups: [1, 2],
 
     settings: "bold|italic|strike|underline",
 
-    colors: "f49|c89|564897"
+    colors: "f49|c89|564897",
   };
 
   return _data;

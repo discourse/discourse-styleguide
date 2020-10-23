@@ -1,7 +1,4 @@
 discourse-styleguide
 ====================
 
-Adds a URL of `/styleguide` to discourse that renders widgets in various
-configurations to aid in styling.
-
-![Screenshot](screenshot.png)
+This plugin is now a core discourse plugin. You don't need to install it anymore.
